@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <form action="/" method="get">
+            <label for="sol">Sol Number: </label>
+            <input type="number" name="sol" placeholder="search '-1' for all">
+
+            <label for"camera">Camera: </label>
+            <select name="camera">
+                <option value="curiosity">Curiosity</option>
+                <option value="spirit">Spirit</option>
+                <option value="opportunity">Opportunity</option>
+            </select>
+            <button type="submit">Filter</button>
+        </form>
+    </header>
+
+    <main>
+        <h1>Welcome to the NASA api project!</h1>
+
+        <section allPhotos>
+            <% photos.forEach(photo=> { %>
+                <div photo>
+                    <br>
+                    <img src="<%= photo.imgUrl %>" />
+                    <p>
+                        <%= photo.camera %>
+                    </p>
+                    <p>
+                        <%= photo.sol %>
+                    </p>
+                    <p>
+                        <%= photo.rover %>
+                    </p>
+                    <p>
+                        <%= photo.landingDate %>
+                    </p>
+                    <p>
+                        <%= photo.status %>
+                    </p>
+                    <br>
+                </div>
+                <% }); %>
+        </section>
+    </main>
+</body>
+
+</html>
