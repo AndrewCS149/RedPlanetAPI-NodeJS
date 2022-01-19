@@ -21,6 +21,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: Set env secrets
+      env:
+        API_KEY: ${{ secrets.API_KEY }}
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v2
       with:
