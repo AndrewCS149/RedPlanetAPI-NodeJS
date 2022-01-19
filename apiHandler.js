@@ -24,7 +24,6 @@ async function handler(req, res) {
     let data = await superagent.get(url).query(parameters).catch();
 
     let photos = data.body.photos.map(val => new photo(val));
-
     res.render("index", { photos: photos });
 }
 
